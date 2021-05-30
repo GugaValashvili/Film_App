@@ -88,4 +88,4 @@ iOSInjectionProject/
 
 # API KEYS
 
-Network/TheMovieDBApiKey.swift
+*.ApiKey.swift
