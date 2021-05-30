@@ -9,6 +9,7 @@
 import Foundation
 struct API {
     static let baseURL = "https://api.themoviedb.org/3/"
+    static let baseImagePath = "https://image.tmdb.org/t/p/w500"
 }
 
 enum APIError: Error {
