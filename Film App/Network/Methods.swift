@@ -25,11 +25,6 @@ enum Methods {
             return "discover/movie?page=\(page)"
         }
         
-//
-//        let queryItems = [URLQueryItem(name: "id", value: "1"), URLQueryItem(name: "id", value: "2")]
-//        var urlComps = URLComponents(string: "www.apple.com/help")!
-//        urlComps.queryItems = queryItems
-//        let result = urlComps.url!
     }
     
 }

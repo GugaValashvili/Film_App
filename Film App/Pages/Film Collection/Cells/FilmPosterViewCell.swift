@@ -17,6 +17,6 @@ class FilmPosterViewCell: UICollectionViewCell {
 
     func configure(posterPath: String?) {
         let url = URL(string: API.baseImagePath + (posterPath ?? ""))
-        posterImageView.sd_setImage(with: url, completed: nil)
+        posterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "Logo"))
     }
 }

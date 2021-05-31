@@ -33,13 +33,20 @@ class NetworkManager {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do {
-                    let entity = try decoder.decode(type, from: data)
+                    let entity = try decoder.decode(ServerErrorEntity.self, from: data)
                     DispatchQueue.main.async {
-                        complition(.success(entity))
+                        complition(.failure(APIError.api(error: entity)))
                     }
                 } catch {
-                    DispatchQueue.main.async {
-                        complition(.failure(error))
+                    do {
+                        let entity = try decoder.decode(type, from: data)
+                        DispatchQueue.main.async {
+                            complition(.success(entity))
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            complition(.failure(error))
+                        }
                     }
                 }
             } else {

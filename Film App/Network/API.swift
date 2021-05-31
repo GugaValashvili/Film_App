@@ -14,4 +14,5 @@ struct API {
 
 enum APIError: Error {
     case networkFail
+    case api(error: ServerErrorEntity)
 }
